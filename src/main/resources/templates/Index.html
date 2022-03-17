@@ -1,6 +1,7 @@
 <!--
 1.scrip标签的src属性，通过指向一个外部地址来加载脚本
 2.link标签html元素用来外部资源链接，规定了当前文档与外部资源的关系
+3.a标签主要是用来实现超链接和锚点
 -->
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -32,7 +33,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">登录</a></li>
+                <li><a href="https://github.com/login/oauth/authorize?client_id=69e311bad26e3f579725&redirect_url=http://localhost:8887/callback&scope=user&state=1">登录</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我<span class="caret"></span></a>
                     <ul class="dropdown-menu">

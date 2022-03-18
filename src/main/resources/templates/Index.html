@@ -2,6 +2,9 @@
 1.scrip标签的src属性，通过指向一个外部地址来加载脚本
 2.link标签html元素用来外部资源链接，规定了当前文档与外部资源的关系
 3.a标签主要是用来实现超链接和锚点
+4.session去银行开通一个账户比如张三，银行里面的数据库就会留下张三的信息。
+5.cookie就相当于银行卡只有通过银行卡才能操作张三的账户
+6，浏览器就相当于是我，而服务器相当于是银行。
 -->
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -32,15 +35,17 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/login/oauth/authorize?client_id=69e311bad26e3f579725&redirect_url=http://localhost:8887/callback&scope=user&state=1">登录</a></li>
-                <li class="dropdown">
+            <li class="nav navbar-nav navbar-right">
+                <li class="dropdown" th:if="${session.user !=null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">消息中心</a></li>
                         <li><a href="#">个人资料</a></li>
                         <li><a href="#">退出登录</a></li>
                     </ul>
+                </li>
+                <li th:if="${session.user == null}">
+                <a ><a href="https://github.com/login/oauth/authorize?client_id=c3099edf6b0f6a7b8f42&redirect_url=http://localhost:8887/callback&scope=user&state=1">登录</a></li>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
